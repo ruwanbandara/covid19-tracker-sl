@@ -1,0 +1,42 @@
+
+<div class="container">
+  <div style="text-align: center; margin-top: 40px">
+    <h5>Last updated</h5>
+    <H3> {{jstoday}}</H3>
+  </div>
+
+
+<div>
+  <button mat-raised-button color="primary" (click)="showOverview()" style="margin: 10px">Local</button>
+  <button mat-raised-button color="primary" (click)="showContact()" style="margin: 10px">Global</button>
+
+
+</div>
+
+
+</div>
+
+<router-outlet></router-outlet>
+<div class="container">
+  <br>
+<!--  <h3>Sri Lanka Hospital </h3>-->
+<!--  <div class="row mt-5">-->
+<!--  <div class="col-md-4 mb-3" *ngFor="let hospital of hospitals">-->
+<!--    <div class="card text-center">-->
+<!--      <div class="card-body">-->
+<!--        <h5 class="card-titel">{{hospital.data.hospital_data.hospital.name}}</h5>-->
+<!--&lt;!&ndash;        <p class="card-text">{{event.description}}</p>&ndash;&gt;-->
+<!--        <a href="#" class="btn btn-primary">Buy Tikets</a>-->
+<!--      </div>-->
+<!--      <div class="card-footer text-muted">-->
+<!--&lt;!&ndash;        {{event.date | date:'shortDate'}}&ndash;&gt;-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  </div>-->
+  {{hospitals.data.hospital_data.hospital.name}}
+
+</div>
+
+
+
