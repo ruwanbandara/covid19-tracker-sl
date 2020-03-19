@@ -13,6 +13,7 @@ export class Covid19Component implements OnInit {
   today = new Date();
   jstoday = '';
   data: any;
+
   constructor(private router: Router, private route: ActivatedRoute, private covid: Covid19Service) {
     this.jstoday = formatDate(this.today, 'dd-MM-yyyy hh:mm:ss a', 'en-US', '+0530');
   }
@@ -25,12 +26,14 @@ export class Covid19Component implements OnInit {
       );
   }
 
-  showOverview() {
+  local() {
     this.router.navigate(['local'], {relativeTo: this.route});
+
+
 
   }
 
-  showContact() {
+  global() {
     this.router.navigate(['global'], {relativeTo: this.route});
 
   }
