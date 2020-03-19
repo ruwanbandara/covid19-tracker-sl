@@ -1,4 +1,3 @@
-
 <div class="container">
   <div style="text-align: center; margin-top: 40px">
     <h5>Last updated</h5>
@@ -6,43 +5,55 @@
   </div>
 
 
-<div>
-  <button mat-raised-button color="primary" (click)="showOverview()" style="margin: 10px">Local</button>
-  <button mat-raised-button color="primary" (click)="showContact()" style="margin: 10px">Global</button>
+  <div>
+    <button mat-raised-button color="primary" (click)="showOverview()" style="margin: 10px">Local</button>
+    <button mat-raised-button color="primary" (click)="showContact()" style="margin: 10px">Global</button>
 
 
-</div>
+  </div>
 
 
 </div>
 
 <router-outlet></router-outlet>
+
 <div class="container">
   <br>
-<!--  <p>{{hospitals.data.hospital_data.hospital.name}}</p>-->
-  <div class="footer container">
-    <p>Made with ❤ by <a href="https://ruwanbandara.github.io/personal_web_site/#"> Ruwan Bandara </a>| Powered by <a href="http://hpb.health.gov.lk/api-documentation?fbclid=IwAR2uqmYP0gsBAROH8Sb1U9zfpuBJiupdggkW4Iq5cDN4wrHbF8ocwPV7SO8">hpb.health.gov.lk</a></p>
+  <h3>Current status of the hospitals in Sri Lanaka</h3>
+  <hr>
+  <div class="row">
+    <div class="col-sm-6" *ngFor="let hospital of data.data.hospital_data" style="margin-bottom: 5px">
+      <div class="card">
+        <div class="card-body">
+
+          <!--      <h6> - {{hospital.cumulative_total}}</h6>-->
+          <small><span style="font-weight: bold"> Name of the Hospital - </span> {{hospital.hospital.name}}</small>
+          <br>
+          <hr>
+          <small style="text-decoration: underline; font-style: oblique">Cumulative count of individuals on
+            treatment/observation</small>
+          <br>
+          <small><span style="font-weight: bold">Sri Lanka - </span>{{hospital.cumulative_local}}</small><br>
+          <small><span style="font-weight: bold">Foreigners - </span> {{hospital.cumulative_foreign}}</small><br>
+          <small><span style="font-weight: bold">Total - </span>{{hospital.cumulative_total}}</small><br><br>
+          <small style="text-decoration: underline">Count of individuals currently on treatment/observation</small>
+          <br>
+
+          <small><span style="font-weight: bold">Sri Lanka - </span>{{hospital.treatment_local}}</small><br>
+          <small><span style="font-weight: bold">Foreigners - </span> {{hospital.treatment_foreign}}</small><br>
+          <small><span style="font-weight: bold">Total - </span>{{hospital.treatment_total}}</small><br><br>
+
+        </div>
+      </div>
+    </div>
+
   </div>
+  <br>
+  <hr>
+  <p style="text-align: center">Made with ❤ by <a href="https://ruwanbandara.github.io/personal_web_site/#"> Ruwan Bandara </a>| Powered by <a
+    href="http://hpb.health.gov.lk/api-documentation?fbclid=IwAR2uqmYP0gsBAROH8Sb1U9zfpuBJiupdggkW4Iq5cDN4wrHbF8ocwPV7SO8">hpb.health.gov.lk</a>
+    <br></p>
+
+
+
 </div>
-<!--  <h3>Sri Lanka Hospital </h3>-->
-<!--  <div class="row mt-5">-->
-<!--  <div class="col-md-4 mb-3" *ngFor="let hospital of hospitals">-->
-<!--    <div class="card text-center">-->
-<!--      <div class="card-body">-->
-<!--        <h5 class="card-titel">{{hospital.data.hospital_data.hospital.name}}</h5>-->
-<!--&lt;!&ndash;        <p class="card-text">{{event.description}}</p>&ndash;&gt;-->
-<!--        <a href="#" class="btn btn-primary">Buy Tikets</a>-->
-<!--      </div>-->
-<!--      <div class="card-footer text-muted">-->
-<!--&lt;!&ndash;        {{event.date | date:'shortDate'}}&ndash;&gt;-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  </div>-->
-<!--  {{hospitals.data.hospital_data.hospital.name}}-->
-
-
-<!--</div>-->
-
-
-

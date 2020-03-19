@@ -12,7 +12,7 @@ export class Covid19Component implements OnInit {
 
   today = new Date();
   jstoday = '';
-  hospitals = []
+  data: any;
   constructor(private router: Router, private route: ActivatedRoute, private covid: Covid19Service) {
     this.jstoday = formatDate(this.today, 'dd-MM-yyyy hh:mm:ss a', 'en-US', '+0530');
   }
@@ -20,7 +20,7 @@ export class Covid19Component implements OnInit {
   ngOnInit() {
     this.covid.getData()
       .subscribe(
-        res => this.hospitals = res,
+        res => this.data = res,
         err => console.log(err)
       );
   }
