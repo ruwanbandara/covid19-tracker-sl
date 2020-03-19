@@ -6,7 +6,7 @@ import {GlobalComponent} from './component/global/global.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: '/covid19/local', pathMatch: 'full'},
+  {path: '', redirectTo: 'covid19/local', pathMatch: 'full'},
   {
     path: 'covid19',
     component: Covid19Component,
