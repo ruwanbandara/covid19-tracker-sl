@@ -8,13 +8,16 @@ import { Covid19Service} from '../../service/covid19.service';
 })
 export class GlobalComponent implements OnInit {
 
-  data = []
+  data: any;
   constructor(private covid: Covid19Service) { }
 
   ngOnInit() {
     this.covid.getData()
       .subscribe(
-        res => this.data = res,
+        res => {
+          this.data = res;
+          console.log(this.data);
+        },
         err => console.log(err)
       );
   }
